@@ -5,7 +5,7 @@ import useSWR from "swr";
 export default function ProductForm() {
   const { mutate } = useSWR("/api/products");
 
-  async function handleSubmit(event) {
+  async function handleAddProduct(event) {
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -29,7 +29,7 @@ export default function ProductForm() {
   }
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleAddProduct}>
       <StyledHeading>Add a new Fish</StyledHeading>
       <StyledLabel htmlFor="name">
         Name:
